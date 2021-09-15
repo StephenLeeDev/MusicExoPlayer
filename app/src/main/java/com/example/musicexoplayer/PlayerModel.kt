@@ -36,4 +36,12 @@ data class PlayerModel(
         currentPosition = if ((currentPosition - 1) < 0) playerMusicList.lastIndex else currentPosition - 1
         return playerMusicList[currentPosition]
     }
+
+    fun currentMusicModel(): MusicModel? {
+        if (playerMusicList.isEmpty()) {
+            return null
+        }
+
+        return playerMusicList[currentPosition]
+    }
 }
